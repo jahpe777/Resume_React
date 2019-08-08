@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Sally Student Resume</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="/Users/jahpe777/Projects/Resume_React/assets/css/index.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
 
@@ -47,13 +47,11 @@
           <address>
             <h2>Contact Info</h2>
               <p>Sally Student
-              <br><a href="sstudent@gmail.com">sstudent@gmail.com</a></br>
+              <a href="sstudent@gmail.com">sstudent@gmail.com</a>
               (714) 651-8754
-              <br><img src="https://peopledotcom.files.wordpress.com/2017/12/best-of-2017-tina-fey-ft-ss1117.jpg" alt="Smiley face" height="200" width="200"></img></br>
+              <img src="https://peopledotcom.files.wordpress.com/2017/12/best-of-2017-tina-fey-ft-ss1117.jpg" alt="Smiley face" height="200" width="200"></img>
               </p>
           </address>
-        </section>
-        <section>  
           <header>
             <h2>Education</h2>
           </header>
@@ -78,9 +76,6 @@
                       <li>Prepare layouts based on site-specific measurements, up-to-date architectural drawings and additional site planning information for each proposed system type. </li>
                       <li>Create customizable site planning documents, which include powerrequirements, HVAC requirements, electrical connections, vibration specs along with typical or ‘quoted’ equipment configurations.</li>
                     </ul>
-          </section>
-
-          <section className='audioEngineer'>
             <header>
               <h3>Audio Engineer</h3>
             </header>
@@ -97,13 +92,12 @@
     
     
       ReactDOM.render (
-        <div>
+        <div className='all'>
           <Header className='title'>
             <h1>Sally Student Resume</h1>
           </Header>
           <main>
             <Nav className='navSection' />
-            <Header className='headerSection' />
             <Address className='addressSection' />
             <Experience className='experienceSection' />
           </main>
