@@ -8,66 +8,125 @@
   </head>
   <body>
 
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about_me">About Me</a></li>
-        <li><a href="/blog">Blog</a></li>
-      </ul>
-    </nav>
+    <div id='root-container'></div>
 
-    <header>
-      <h1>Sally Student Resume</h1>
-    </header>
+    <script
+    src="https://unpkg.com/react@16/umd/react.development.js">
+    </script>
+    <script
+    src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+    </script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js">
+    </script>
 
-    <main>
-      <section>
-        <address>
-          <h2>Contact Info</h2>
-            <p>Sally Student
-            <br><a href="sstudent@gmail.com">sstudent@gmail.com</a></br>
-            (714) 651-8754
-            <br><img src="https://peopledotcom.files.wordpress.com/2017/12/best-of-2017-tina-fey-ft-ss1117.jpg" alt="Smiley face" height="200" width="200"></br>
-            </p>
-        </address>
-      </section>
-
-      <section>  
-        <header>
-          <h2>Education</h2>
-        </header>
-            <h3>University of Virginia 08'</h3>
-      </section>
-
-    <main>
-      <section>
-        <header>
-          <h2>Work Experience</h2>
-        </header>
-            <h3>Drafter/Designer 4</h3>
-              <h4>Philips Healthcare
-                <div>4/13–Present</div> 
-              </h4>
-                <p>Joined as AutoCAD Drafter/Designer at Philips Healthcare for the Site Planning Department. Since 2013, drafted and designed a myriad of hospital sites for CT, Nuclear Medicine, PET, and MRI systems. Extensive knowledge using AutoCAD and among the top producers of drawings within the Site Planning Department.</p>
-                <ul>
-                  <li>Develop site-specific, AutoCAD drawings used for bidding documents and construction cost estimates.</li>
-                  <li>Prepare layouts based on site-specific measurements, up-to-date architectural drawings and additional site planning information for each proposed system type. </li>
-                  <li>Create customizable site planning documents, which include powerrequirements, HVAC requirements, electrical connections, vibration specs along with typical or ‘quoted’ equipment configurations.</li>
-                </ul>
-      </section>
-
-      <section>
-        <header>
-          <h3>Audio Engineer</h3>
-        </header>
-          <h4>The Seaside Lounge Recording Studios
-            <div>2/09–02/13</div> 
-          </h4>
+    <script type='text/babel'>
+    
+      function Nav(props) {
+        return (
+          <nav className={props.className}>
             <ul>
-              <li>Recorded, edited and mixed analog and digital audio for musical acts, voice-overs, and scores.</li>
-              <li>Deciphered technical issues with “hands-on” solutions within a pressurized, studio environment.</li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about_me">About Me</a></li>
+              <li><a href="/blog">Blog</a></li>
             </ul>
-      </section>
-    </main>
+          </nav>
+        );
+      }
+
+      function Header(props) {
+        return (
+          <header className={props.className}>
+            {props.children}
+          </header>
+        );
+      }
+
+      function Address(props) {
+        return (
+          <section className={props.className}>
+          <address>
+            <h2>Contact Info</h2>
+              <p>Sally Student
+              <br><a href="sstudent@gmail.com">sstudent@gmail.com</a></br>
+              (714) 651-8754
+              <br><img src="https://peopledotcom.files.wordpress.com/2017/12/best-of-2017-tina-fey-ft-ss1117.jpg" alt="Smiley face" height="200" width="200"></img></br>
+              </p>
+          </address>
+        </section>
+        <section>  
+          <header>
+            <h2>Education</h2>
+          </header>
+              <h3>University of Virginia 08'</h3>
+        </section>
+        );
+      }
+
+      function Experience(props) {
+        return (
+          <section className={props.className}>
+            <header>
+              <h2>Work Experience</h2>
+            </header>
+                <h3>Drafter/Designer 4</h3>
+                  <h4>Philips Healthcare
+                    <div>4/13–Present</div> 
+                  </h4>
+                    <p>Joined as AutoCAD Drafter/Designer at Philips Healthcare for the Site Planning Department. Since 2013, drafted and designed a myriad of hospital sites for CT, Nuclear Medicine, PET, and MRI systems. Extensive knowledge using AutoCAD and among the top producers of drawings within the Site Planning Department.</p>
+                    <ul>
+                      <li>Develop site-specific, AutoCAD drawings used for bidding documents and construction cost estimates.</li>
+                      <li>Prepare layouts based on site-specific measurements, up-to-date architectural drawings and additional site planning information for each proposed system type. </li>
+                      <li>Create customizable site planning documents, which include powerrequirements, HVAC requirements, electrical connections, vibration specs along with typical or ‘quoted’ equipment configurations.</li>
+                    </ul>
+          </section>
+
+          <section className='audioEngineer'>
+            <header>
+              <h3>Audio Engineer</h3>
+            </header>
+              <h4>The Seaside Lounge Recording Studios
+                <div>2/09–02/13</div> 
+              </h4>
+                <ul>
+                  <li>Recorded, edited and mixed analog and digital audio for musical acts, voice-overs, and scores.</li>
+                  <li>Deciphered technical issues with “hands-on” solutions within a pressurized, studio environment.</li>
+                </ul>
+          </section>
+        );
+      }
+    
+    
+      ReactDOM.render (
+        <div>
+          <Header className='title'>
+            <h1>Sally Student Resume</h1>
+          </Header>
+          <main>
+            <Nav className='navSection' />
+            <Header className='headerSection' />
+            <Address className='addressSection' />
+            <Experience className='experienceSection' />
+          </main>
+        </div>,
+        document.querySelector('#root-container')
+      );
+    </script>
   </body>
 </html>
+
+
+
+
+
+
+
+    
+
+   
+
+   
+   
+
+    
+   
+    
